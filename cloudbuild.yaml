@@ -1,0 +1,8 @@
+steps:
+  - name: "gcr.io/cloud-builders/go"
+    args: ["install", "ghe.spotify.net/dxia/gcp-cd-codelab"]
+    env: ["PROJECT_ROOT=ghe.spotify.net/dxia/gcp-cd-codelab"]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/operation-covfefe-1/gcp-cd-codelab:$REVISION_ID", "-f", "Dockerfile", "."]
+images:
+  - "gcr.io/operation-covfefe-1/gcp-cd-codelab:$REVISION_ID"
