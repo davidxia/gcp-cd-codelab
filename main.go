@@ -6,7 +6,7 @@ import (
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "testing deploying to multiple clusters")
+	io.WriteString(w, "testing deploying to multiple clusters. Will this work?")
 }
 
 func main() {
